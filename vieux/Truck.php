@@ -9,6 +9,9 @@ class Truck extends Vehicle
         'electric',
         'huile de foie de morue',
     ];
+
+    public function changeWheel(){}
+    
     /**
      * @var int
      */

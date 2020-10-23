@@ -3,7 +3,7 @@
 // require 'Vehicle.php';
 
 
-final class Car extends Vehicle 
+final class Skateboard extends Vehicle 
 {
     
 

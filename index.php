@@ -1,84 +1,36 @@
 <?php
 
-// il faut appeler l'objet
-require_once 'Bicycle.php';
-require_once 'Car.php';
-require_once 'Truck.php';
+require 'HighWay.php';
+require 'MotorWay.php';
+require 'PedestrianWay.php';
+require 'ResidentialWay.php';
+require 'Vehicle.php';
+require 'Car.php';
+require 'Bike.php';
+require 'Skateboard.php';
 
-// Mon 1er truck
-$maurice = new Truck('200', 'blue', 3, 'electric');
-var_dump($maurice);
+
+// Vehicles
+$car = new Car;
+$trucARoues = new Vehicle;
+$bike = new Bike;
+$skateboard = new Skateboard;
+
+// Ways
+$a4 = new MotorWay(4, 130);
+$rueDu22Novembre = new ResidentialWay(2, 50);
+$pedestrian = new PedestrianWay(1, 10);
+
+// adding vehicles 
 echo '<br>';
-$maurice->isItLoaded();
+$a4->addVehicle($car);
 echo '<br>';
-echo $maurice->forward();
-echo $maurice->brake();
+$a4->addVehicle($bike);
 echo '<br>';
-
-// Mon 2éme truck
-$bob = new Truck('1000', 'purple', 1, 'huile de foie de morue');
-var_dump($bob);
+$pedestrian->addVehicle($bike);
 echo '<br>';
-$bob->isItLoaded();
+$pedestrian->addVehicle($car);
 echo '<br>';
-echo $bob->forward();
-echo $bob->brake();
+$rueDu22Novembre->addVehicle($trucARoues);
 echo '<br>';
-
-// voiture
-$car = new Car('green', 4, 'electric');
-echo $car->forward();
-var_dump($car);
-
-// Vélo
-echo '<br>';
-$bicycle = new Bicycle('blue', 1);
-echo $bicycle->forward();
-var_dump($bicycle);
-
-// Const car
-echo '<br>';
-var_dump(Car::ALLOWED_ENERGIES);
-
-
-
-//POO précédents :
-
-// $renaultZoe = new Car('white', 5, '95%');
-// var_dump($renaultZoe);
-// echo '<br>';
-
-// $peugeot206 = new Car('grey', 4, 'pas folichon');
-// var_dump($peugeot206);
-// echo '<br>';
-// // Moving car
-// echo $renaultZoe->start();
-// echo '<br>';
-// echo $renaultZoe->forward();
-// echo '<br>';
-// echo $renaultZoe->brake();
-
-
-
-// // $bike est une instance de l'objet bicycle
-// $bike = new Bicycle();
-// var_dump($bike);
-// echo '<br>';
-// // Possiblité de modifier un attribut depuis l'extérieur de l'objet 
-// $bike->nbWheels = 2;
-// // var_dump($bike->getColor());
-// // pour les trucs en private faut faire ça
-// $bike->setColor('blue');
-// $bike->setCurrentSpeed(0);
-// echo '<br>';
-// var_dump($bike);
-// echo '<br>';
-
-// // Moving bike
-// echo $bike->forward();
-// echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
-// echo $bike->brake();
-// echo '<br> Vitesse du vélo : ' . $bike->currentSpeed . ' km/h' . '<br>';
-// echo $bike->brake();
-
-
+$rueDu22Novembre->addVehicle($skateboard);
